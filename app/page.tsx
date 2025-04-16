@@ -30,38 +30,13 @@ export default function Home() {
     }
   };
 
-  const fetchDataFace = async () => {
-    try {
-      const res = await axios.get('/api/image_1/face');
-      console.log(res.data);
-      if (res.status === 200) {
-        setData(res.data)
-      }
-    } catch (error) {
-      console.error('Axios error:', error);
-    }
-  };
-
-  const fetchDataHelmet = async () => {
-    try {
-      const res = await axios.get('/api/image_1/helmet');
-      console.log(res.data);
-      if (res.status === 200) {
-        setData(res.data)
-      }
-    } catch (error) {
-      console.error('Axios error:', error);
-    }
-  };
-
   useEffect(() => {
-    // fetchDataFace();
-    // fetchDataHelmet()
+
     fetchData()
   }, [selectType]);
 
   return (
-    <div className="bg-gray-200 px-8 py-8 h-screen">
+    <div className="bg-gray-200 px-5 md:px-8 py-5 md:py-8 h-screen">
 
       <Card>
         <CardBody>
@@ -94,7 +69,7 @@ export default function Home() {
                 <Card className="p-4">
                   <div className="flex flex-row gap-2">
                     <div className="w-full">
-                      
+
                       <Image
                         src={`https://otopthaishop.com/image_processing/image_1/${selectType === "1" ? item.face_img : item.helmet_img}`}
                         width={900}
