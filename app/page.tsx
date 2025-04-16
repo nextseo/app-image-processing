@@ -94,6 +94,7 @@ export default function Home() {
                 <Card className="p-4">
                   <div className="flex flex-row gap-2">
                     <div className="w-full">
+                      
                       <Image
                         src={`https://otopthaishop.com/image_processing/image_1/${selectType === "1" ? item.face_img : item.helmet_img}`}
                         width={900}
